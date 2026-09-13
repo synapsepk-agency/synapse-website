@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /inbox
+Disallow: /login
+Disallow: /api/
+
+Sitemap: /sitemap.xml

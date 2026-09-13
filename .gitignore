@@ -1,0 +1,15 @@
+node_modules
+.output
+.vercel
+.nitro
+.tanstack
+.vinxi
+data
+dist
+*.log
+.DS_Store
+artifacts
+attachments
+screenshots
+public/synapse-website.zip
+public/__grok
