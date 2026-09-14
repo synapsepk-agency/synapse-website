@@ -61,7 +61,15 @@ function RootDocument() {
             </LanguageProvider>
           </ThemeProvider>
         </AuthProvider>
-        <Scripts />
+                <Scripts />
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments);};",
+          }}
+        />
+        <script defer src="/_vercel/insights/script.js" />
+        <script defer src="/_vercel/speed-insights/script.js" />
       </body>
     </html>
   );
