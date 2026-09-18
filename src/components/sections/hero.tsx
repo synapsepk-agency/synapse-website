@@ -103,6 +103,15 @@ export function Hero() {
           />
         </h1>
         <p className="mt-3 max-w-2xl text-sm text-fg-muted sm:text-[0.95rem]">{t("hero.kicker")}</p>
+        <div className="mt-5 flex flex-wrap items-center gap-3">
+          <Link to="/contact">
+            <Button>{t("hero.cta")}</Button>
+          </Link>
+          <a href={SITE.whatsapp} target="_blank" rel="noreferrer">
+            <Button variant="secondary">{t("nav.letsTalk")}</Button>
+          </a>
+        </div>
+
 
         <ul className="mt-8 grid gap-x-6 gap-y-2.5 sm:grid-cols-2 lg:grid-cols-4">
           {FACTS.map((key) => (
@@ -115,14 +124,7 @@ export function Hero() {
           ))}
         </ul>
 
-        <div className="mt-9 flex flex-wrap items-center gap-3">
-          <Link to="/contact">
-            <Button>{t("hero.cta")}</Button>
-          </Link>
-          <a href={SITE.whatsapp} target="_blank" rel="noreferrer">
-            <Button variant="secondary">{t("nav.letsTalk")}</Button>
-          </a>
-        </div>
+        
       </div>
     </section>
   );
