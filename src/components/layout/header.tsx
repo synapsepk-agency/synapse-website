@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
+import { SITE } from "@/lib/site";
 import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { BrandLogo } from "./logo";
@@ -12,6 +13,54 @@ const HEADER_LINKS = [
   { to: "/team", key: "team" as const },
   { to: "/blog", key: "blog" as const },
 ] as const;
+
+export function ShareHeader() {
+  const { t, lang, setLang } = useI18n();
+  return (
+    <header className="site-header">
+      <div className="relative z-[410] mx-auto flex h-[4.35rem] max-w-7xl items-center gap-2 px-3 sm:h-[5.25rem] sm:px-5 lg:h-[5.75rem] lg:px-6">
+        <span className="relative z-[411] inline-flex shrink-0 -ms-1">
+          <img
+            src="/logo-mark.png"
+            alt="Synapse Marketing Agency"
+            className="h-[3.45rem] w-auto sm:h-[4.85rem] lg:h-[5.4rem]"
+            width="220"
+            height="52"
+            decoding="async"
+          />
+        </span>
+        <div className="header-actions relative z-[500] ml-auto flex shrink-0 items-center gap-1">
+          <div className="header-lang flex items-center rounded-full p-0.5 text-[0.7rem] font-semibold">
+            <button
+              type="button"
+              onPointerDown={(e) => {
+                e.stopPropagation();
+                setLang("en");
+              }}
+              className={cn("rounded-full px-2 py-1.5", lang === "en" && "is-on")}
+            >
+              EN
+            </button>
+            <button
+              type="button"
+              onPointerDown={(e) => {
+                e.stopPropagation();
+                setLang("ur");
+              }}
+              className={cn("rounded-full px-2 py-1.5", lang === "ur" && "is-on")}
+            >
+              اردو
+            </button>
+          </div>
+          <a href={SITE.whatsapp} target="_blank" rel="noreferrer" className="header-contact hidden sm:inline-flex">
+            {t("nav.letsTalk")}
+            <span aria-hidden>→</span>
+          </a>
+        </div>
+      </div>
+    </header>
+  );
+}
 
 export function Header() {
   const { t, lang, setLang } = useI18n();
