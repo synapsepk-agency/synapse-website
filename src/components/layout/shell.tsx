@@ -1,11 +1,14 @@
 import type { ReactNode } from "react";
-import { Header } from "./header";
-import { Footer } from "./footer";
+import { useRouterState } from "@tanstack/react-router";
+import { Header, ShareHeader } from "./header";
+import { Footer, ShareFooter } from "./footer";
 import { WhatsAppFloat } from "./whatsapp-float";
 import { Chatbot } from "./chatbot";
 import { TouchFill } from "./touch-fill";
 
 export function SiteShell({ children }: { children: ReactNode }) {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const share = pathname === "/packages";
   return (
     <div className="flex min-h-dvh max-w-full flex-col overflow-x-clip bg-bg text-fg">
       <a
@@ -15,12 +18,12 @@ export function SiteShell({ children }: { children: ReactNode }) {
         Skip to content
       </a>
       <TouchFill />
-      <Header />
+      {share ? <ShareHeader /> : <Header />}
       <main id="main" className="flex-1">
         {children}
       </main>
-      <Footer />
-      <Chatbot />
+      {share ? <ShareFooter /> : <Footer />}
+      {share ? null : <Chatbot />}
       <WhatsAppFloat />
     </div>
   );
