@@ -4,6 +4,51 @@ import { SERVICES } from "@/lib/content";
 import { useI18n } from "@/lib/i18n";
 import { SocialRow } from "./socials";
 
+export function ShareFooter() {
+  const { t } = useI18n();
+  return (
+    <footer className="relative bg-black text-[#f4f1ea]">
+      <div className="footer-wave" aria-hidden>
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path d="M0 58C180 118 380 12 560 48C740 84 880 8 1080 52C1220 82 1340 22 1440 56V120H0Z" />
+        </svg>
+      </div>
+      <div className="relative overflow-hidden">
+        <img
+          src="/logo-mark.png"
+          alt=""
+          aria-hidden
+          className="pointer-events-none absolute end-[-6%] bottom-[-10%] z-0 w-[min(55vw,460px)] opacity-[0.08] select-none"
+        />
+        <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-start gap-5 px-4 pb-16 pt-6 sm:px-6">
+          <img src="/logo-mark.png" alt="Synapse Marketing Agency" className="h-20 w-auto" width="400" height="226" />
+          <p className="font-display text-[0.62rem] font-semibold tracking-[0.34em] text-white/50 uppercase">
+            {t("footer.tagline")}
+          </p>
+          <ul className="space-y-2 text-sm">
+            <li>
+              <a href={SITE.social.email} className="text-white/70 hover:text-accent">
+                {SITE.email}
+              </a>
+            </li>
+            <li>
+              <a href={SITE.phoneTel} className="text-white/70 hover:text-accent">
+                {SITE.phone}
+              </a>
+            </li>
+            <li>
+              <a href={SITE.whatsapp} target="_blank" rel="noreferrer" className="text-accent hover:underline">
+                {t("contact.whatsapp")}
+              </a>
+            </li>
+          </ul>
+          <p className="text-xs text-white/40">{t("footer.rights")}</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
 export function Footer() {
   const { t } = useI18n();
   return (
