@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Reveal } from "./reveal";
 import { SplitWords } from "./split-text";
 
-export function FinalCta() {
+export function FinalCta({ whatsappOnly = false }: { whatsappOnly?: boolean }) {
   const { t } = useI18n();
   return (
     <section className="relative overflow-hidden border-t border-border">
@@ -18,9 +18,15 @@ export function FinalCta() {
           />
           <p className="mt-4 max-w-xl text-sm text-fg-muted">{t("cta.body")}</p>
           <div className="mt-6 flex flex-wrap items-center gap-3">
-            <Link to="/contact">
-              <Button size="lg">{t("cta.primary")}</Button>
-            </Link>
+            {whatsappOnly ? (
+              <a href={SITE.whatsapp} target="_blank" rel="noreferrer">
+                <Button size="lg">{t("cta.primary")}</Button>
+              </a>
+            ) : (
+              <Link to="/contact">
+                <Button size="lg">{t("cta.primary")}</Button>
+              </Link>
+            )}
             <a href={SITE.whatsapp} target="_blank" rel="noreferrer">
               <Button size="lg" variant="secondary">
                 {t("cta.secondary")}
