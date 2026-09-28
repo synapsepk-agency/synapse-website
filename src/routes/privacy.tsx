@@ -1,26 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useI18n } from "@/lib/i18n";
-import { PageHero } from "@/components/layout/page-hero";
-import { LegalDoc } from "@/components/layout/legal-doc";
-import { PRIVACY_SECTIONS, PRIVACY_UPDATED } from "@/lib/legal";
-import { pageMeta } from "@/lib/seo";
+import { PricingBoards } from "@/components/sections/pricing-boards";
 
-export const Route = createFileRoute("/privacy")({
-  component: PrivacyPage,
+export const Route = createFileRoute("/pricing")({
+  component: PricingPage,
   head: () => ({
-    meta: pageMeta(
-      "Privacy Policy, Synapse Marketing Agency",
-      "How Synapse Marketing Agency in Quetta collects, uses and protects information when you visit our website or enquire about digital marketing and web development.",
-    ),
+    meta: [
+      { title: "Pricing, Synapse Marketing Agency" },
+      {
+        name: "description",
+        content:
+          "Meta Ads, social media, web development, SEO, brand identity, consultancy and video packages from Synapse Marketing Agency in Quetta.",
+      },
+    ],
   }),
 });
 
-function PrivacyPage() {
-  const { t } = useI18n();
-  return (
-    <>
-      <PageHero title={t("legal.privacyTitle")} sub={t("legal.privacyLead")} bg="/page-bg/privacy-key.jpg?v=2" />
-      <LegalDoc updated={PRIVACY_UPDATED} sections={PRIVACY_SECTIONS} />
-    </>
-  );
+function PricingPage() {
+  return <PricingBoards />;
 }
