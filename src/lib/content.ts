@@ -158,8 +158,8 @@ export const VIDEO_PACKAGES = [
     num: "02",
     name: { en: "Production", ur: "پروڈکشن" },
     popular: false,
-    reel: "PKR 3,999",
-    month: "PKR 29,999",
+    reel: "PKR 6,999",
+    month: "PKR 55,999",
     cadence: { en: "2 reels / week · 60–90 sec", ur: "2 ریلز / ہفتہ · 60–90 سیکنڈ" },
     features: {
       en: ["Scripting", "Professional shooting", "Professional mic", "Lighting", "Editing", "Final delivery"],
