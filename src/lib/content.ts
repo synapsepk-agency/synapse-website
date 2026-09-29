@@ -171,8 +171,8 @@ export const VIDEO_PACKAGES = [
     num: "03",
     name: { en: "Cinematography", ur: "سینیماٹوگرافی" },
     popular: false,
-    reel: "PKR 5,999",
-    month: "PKR 45,999",
+    reel: "PKR 9,999",
+    month: "PKR 79,999",
     cadence: { en: "2 reels / week · 60–90 sec", ur: "2 ریلز / ہفتہ · 60–90 سیکنڈ" },
     features: {
       en: [
@@ -192,7 +192,7 @@ export const VIDEO_PACKAGES = [
     name: { en: "Growth Mix", ur: "گروتھ مکس" },
     popular: true,
     reel: null,
-    month: "PKR 43,999",
+    month: "PKR 91,999",
     cadence: { en: "16 reels / month", ur: "16 ریلز / ماہ" },
     features: {
       en: [
