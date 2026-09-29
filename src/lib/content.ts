@@ -145,8 +145,8 @@ export const VIDEO_PACKAGES = [
     num: "01",
     name: { en: "Speed Ramp", ur: "سپیڈ ریمپ" },
     popular: false,
-    reel: "PKR 1,999",
-    month: "PKR 17,999",
+    reel: "PKR 2,999",
+    month: "PKR 47,999",
     cadence: { en: "4 reels / week · 30–40 sec", ur: "4 ریلز / ہفتہ · 30–40 سیکنڈ" },
     features: {
       en: ["Shooting", "Editing", "Final delivery"],
