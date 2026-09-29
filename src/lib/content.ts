@@ -216,7 +216,7 @@ export const WEB_PACKAGES = [
     id: "basic",
     num: "01",
     nameKey: "pricing.web.basic",
-    price: "PKR 30,000",
+    price: "PKR 59,999",
     popular: false,
     bestFor: {
       en: "Best for: small / new business",
@@ -249,7 +249,7 @@ export const WEB_PACKAGES = [
     id: "growth",
     num: "02",
     nameKey: "pricing.web.growth",
-    price: "PKR 45,000",
+    price: "PKR 74,999",
     popular: true,
     bestFor: {
       en: "Best for: business ready to grow",
@@ -282,7 +282,7 @@ export const WEB_PACKAGES = [
     id: "premium",
     num: "03",
     nameKey: "pricing.web.premium",
-    price: "PKR 65,000",
+    price: "PKR 109,999",
     popular: false,
     bestFor: {
       en: "Best for: established business",
